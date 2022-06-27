@@ -150,6 +150,8 @@ class Chart(pygame.sprite.Sprite):
 
     def flag(self, y, x):
         box = self.chart[y][x]
+        if box.opened:
+            return
         if not box.flagged and self.flags:
             box.flagged = True
             self.flags -= 1
